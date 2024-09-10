@@ -5,8 +5,9 @@
 h1 {
     color: orange;
     justify-content: center;
-    display: flex; 
+    display: flex;  
     align-items: center;
+    
 }
 
 body {
@@ -23,7 +24,8 @@ body {
     
   }
 
-  photo{
+  .photo,
+   .comp{
     justify-content: center;
     display: flex; 
     align-items: center;
