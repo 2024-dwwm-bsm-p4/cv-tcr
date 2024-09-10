@@ -10,6 +10,13 @@ h1 {
     
 }
 
+h5 {
+    justify-content: center;
+    display: flex;  
+    align-items: center;
+    
+}
+
 body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -24,8 +31,7 @@ body {
     
   }
 
-  .photo,
-   .comp{
+  .photo{
     justify-content: center;
     display: flex; 
     align-items: center;
