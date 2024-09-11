@@ -2,11 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-h1 {
+h2 {
     color: orange;
     justify-content: center;
     display: flex;  
     align-items: center;
+    font-weight: 600;
     
 }
 
@@ -19,7 +20,7 @@ h5 {
 
 body {
     font-family: "Poppins", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
     border: 3px orange solid;
   }
@@ -37,4 +38,19 @@ body {
     align-items: center;
 }
 
+table {
+  border-collapse: collapse;
+  justify-content: center;
+    display: flex; 
+    align-items: center;
+}
 
+td, th /* Mettre une bordure sur les td ET les th */ {
+  border: 2px solid black;
+}
+
+@media screen and (min-width: 1200px){
+  
+
+
+}
