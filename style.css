@@ -14,15 +14,6 @@ h2 {
     
 }
 
-h1 {
-  color: orange;
-  justify-content: center;
-  display: flex;  
-  align-items: center;
-  font-weight: 600;
-
-}
-
 h5 {
     justify-content: center;
     display: flex;  
@@ -43,6 +34,13 @@ body {
     max-width: 100%;
     height: auto;
     
+  }
+
+  .avatar{
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+
   }
 
 /* Tableau */
@@ -114,6 +112,11 @@ footer {
   display: flex;
   gap: 20px;
   
+}
+
+p{
+  font-size: 32px;
+  color: orange;
 }
 
 /*Desktop*/
