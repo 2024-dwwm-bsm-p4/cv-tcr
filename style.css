@@ -11,6 +11,15 @@ h2 {
     
 }
 
+h1 {
+  color: orange;
+  justify-content: center;
+  display: flex;  
+  align-items: center;
+  font-weight: 600;
+
+}
+
 h5 {
     justify-content: center;
     display: flex;  
@@ -22,7 +31,8 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 200;
     font-style: normal;
-    border: 3px orange solid;
+    border: 4px orange solid;
+    padding: 20px;
   }
 
   img {   
@@ -41,11 +51,12 @@ body {
 table {
   border-collapse: collapse;
   justify-content: center;
-    display: flex; 
-    align-items: center;
+  align-items: center;
+  display: flex; 
+  
 }
 
-td, th /* Mettre une bordure sur les td ET les th */ {
+td, th {
   border: 2px solid black;
 }
 
