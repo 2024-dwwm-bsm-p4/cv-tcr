@@ -292,6 +292,27 @@ td, th {
   
 	
 }	
+p{
+color: black;
+
+}
+
+.mnuit{
+background: black;
+p{
+  color:white;
+}
+
+h5{
+    color:white
+}
+
+h2{
+    color:white;
+}
+
+
+}
 
 
 }
