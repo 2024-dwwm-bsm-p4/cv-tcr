@@ -120,6 +120,10 @@ p{
   color: orange;
 }
 
+/*Pop UP*/
+
+
+
 .button-opt{
   display: flex;
   justify-content: center;
@@ -131,6 +135,7 @@ p{
   border: none;
   background-color: transparent;
   cursor: pointer;
+  stroke: orange;
 }
 
 
@@ -149,9 +154,67 @@ p{
   }
 }
 
+.buttoncs {
+  padding: 17px 40px;
+  border-radius: 10px;
+  border: 0;
+  background-color: black;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: black;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+
+.buttoncs:hover {
+  box-shadow: black;
+}
+
+.buttoncs:active {
+  background-color: black;
+  box-shadow: black;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+
+/*Mode nuit*/
+
+.mnuit{
+
+  transition-property: background,p,h5,h2,td,th;
+  transition-duration: 4s;
+
+  background: black;
+  border: 6px white solid;
+  p{
+    color:white;
+  }
+  
+  h5{
+      color:white
+  }
+  
+  h2{
+      color:white;
+  }
+  td, th {
+    border: 2px solid white;
+  }
+  .button-opt{
+  stroke: white;
+
+  }
+  
+  
+  }
+
+
+
 /*Desktop*/
 
 @media screen and (min-width: 1200px){
+
   /*fond gradient*/
 
   body
@@ -296,22 +359,18 @@ p{
 color: black;
 
 }
-
-.mnuit{
-background: black;
-p{
-  color:white;
-}
-
-h5{
-    color:white
-}
-
-h2{
-    color:white;
-}
-
-
+.button-opt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 6px;
+  gap: 1px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  stroke: white;
 }
 
 

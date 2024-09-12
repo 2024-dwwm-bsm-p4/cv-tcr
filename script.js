@@ -2,19 +2,21 @@ function opop(){
     const myPopup = new Popup({
         id: "popup",
         title: "Options",
-        content: `<input type="button" onclick="mode_nuit()" class="hc" value="Haut contraste" />`,
+        content: `<input type="button" onclick="mode_nuit()" class="buttoncs" value="Mode sombre" />`,
         font: "Poppins, sans-serif",
         css: `@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');`,
         disableScroll:false,
-        fadeTime:"2s"
+        fadeTime:"1s"
             
     });
       
       myPopup.show();
 }
 
-function mode_nuit(){
-document.getElementById("bodyhtml");
-bodyhtml.classList.toggle("mnuit");
-
+function mode_nuit(){        
+            document.getElementById("bodyhtml");
+            bodyhtml.classList.toggle("mnuit");
 }
+
+        
+  
