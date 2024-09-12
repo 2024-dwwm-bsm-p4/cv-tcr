@@ -114,9 +114,39 @@ footer {
   
 }
 
+
 p{
   font-size: 32px;
   color: orange;
+}
+
+.button-opt{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 6px;
+  gap: 1px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.button-opt:hover .svg-icon {
+  animation: spin 2s linear infinite;
+  
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*Desktop*/
