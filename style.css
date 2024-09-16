@@ -4,26 +4,12 @@
 
 /* Element globale */
 
-p.line.anim-typewriter{
+p.line{
 
   font-size: 50px;
   color: orange;
-  /*justify-content: center;*/
   text-align: center;
-  display: flex;  
-  align-items: center;
-  
-}
-
-
-#div.comp-titre > p{
-  font-size: 30px;
-  color: black;
-}
-
-div.comp-objet p{
-font-size: 2px;
-
+  white-space: nowrap;
 }
 
 
@@ -134,12 +120,6 @@ footer {
   display: flex;
   gap: 20px;
   
-}
-
-
-p  line anim-typewriter{
-  font-size: 32px;
-  color: orange;
 }
 
 /*Pop UP*/
@@ -278,13 +258,11 @@ p  line anim-typewriter{
 
     font-size: 50px;
     color: white;
-    justify-content: center;
-    display: flex;  
-    align-items: center;
-    
+    text-align: center;
+    white-space: nowrap;
   }
   
-  
+
   }
 
 
@@ -299,6 +277,7 @@ p  line anim-typewriter{
    {
     background: linear-gradient(106deg, #ffda95, #00ffa5, #a500ff);
     background-size: 600% 600%;
+    
 
     -webkit-animation: Gradient-site 30s ease infinite;
     -moz-animation: Gradient-site 30s ease infinite;
