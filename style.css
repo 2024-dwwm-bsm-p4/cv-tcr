@@ -4,12 +4,29 @@
 
 /* Element globale */
 
+
+body {
+
+  transition-property: background,p,h5,h2,td,th;
+  transition-duration: 4s;
+
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  border: 4px orange solid;
+  padding: 20px;
+}
+
 p.line{
 
   font-size: 50px;
   color: orange;
   text-align: center;
-  white-space: nowrap;
+}
+
+.Info-entete{
+  margin: 70px;
 }
 
 
@@ -28,14 +45,6 @@ h5 {
     align-items: center;
     
 }
-
-body {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    border: 4px orange solid;
-    padding: 20px;
-  }
 
   img {   
     border-radius: 50%;
@@ -109,10 +118,9 @@ td, th {
 }
 
 footer {
+  margin-top: 30px;
   display: flex;
   justify-content: center;
- 
-  
 }
 
 .boutons-footer{
@@ -123,8 +131,6 @@ footer {
 }
 
 /*Pop UP*/
-
-
 
 .button-opt{
   display: flex;
@@ -227,12 +233,10 @@ footer {
   transition: left 0.65s ease-out;
 }
 
+
 /*Mode nuit*/
 
 .mnuit{
-
-  transition-property: background,p,h5,h2,td,th;
-  transition-duration: 4s;
 
   background: black;
   border: 6px white solid;
@@ -249,6 +253,7 @@ footer {
   }
   td, th {
     border: 2px solid white;
+    text-align: center;
   }
   .button-opt{
   stroke: white;
@@ -259,7 +264,6 @@ footer {
     font-size: 50px;
     color: white;
     text-align: center;
-    white-space: nowrap;
   }
   
 
@@ -272,9 +276,13 @@ footer {
 @media screen and (min-width: 1200px){
 
   /*fond gradient*/
+  
 
   body
-   {
+   {      
+
+    
+
     background: linear-gradient(106deg, #ffda95, #00ffa5, #a500ff);
     background-size: 600% 600%;
     
@@ -310,8 +318,7 @@ h2 {
   justify-content: center;
   display: flex;  
   align-items: center;
-  font-weight: 600;
-  
+  margin: 50px;
 }
 
 h1 {
@@ -319,14 +326,13 @@ color:white;
 justify-content: center;
 display: flex;  
 align-items: center;
-font-weight: 600;
-
 }
 
 td, th {
   width: 15%;
   border: 4px solid white;
   box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+  text-align: center;
 }
 
 /*Animation d'écriture*/
@@ -395,12 +401,9 @@ p.line.anim-typewriter{
 }
 
 .container{
-  width: 100%;
-	height: 100%;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+  margin: 10px;
 }
 
 .avatar {
