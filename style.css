@@ -12,14 +12,14 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-style: normal;
-  border: 4px orange solid;
+  border: 4px #794F01 solid;
   padding: 20px;
 }
 
 p.line{
 
   font-size: 50px;
-  color: orange;
+  color: #794F01;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@ p.line{
 
 
 h2 {
-    color: orange;
+    color: #794F01;
     justify-content: center;
     display: flex;  
     align-items: center;
@@ -139,7 +139,7 @@ footer {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  stroke: orange;
+  stroke: #794F01;
 }
 
 
