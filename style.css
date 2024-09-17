@@ -45,8 +45,7 @@ h5 {
 }
 
    img {   
-    /* border-radius: 50%; */
-    max-width: 90%;
+    max-width: 100%;
     
   } 
 
@@ -181,13 +180,6 @@ footer {
   box-shadow: black;
   transform: translateY(5px);
   transition: 200ms;
-}
-
-/* Carousselle */
-
-
-.owl-carousel .imgslider {
-  border-radius: 0%;
 }
 
 
