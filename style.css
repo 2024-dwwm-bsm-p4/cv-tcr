@@ -44,12 +44,11 @@ h5 {
     
 }
 
-  img {   
-    border-radius: 50%;
-    max-width: 100%;
-    height: auto;
+   img {   
+    /* border-radius: 50%; */
+    max-width: 90%;
     
-  }
+  } 
 
   .avatar{
     justify-content: center;
@@ -187,11 +186,8 @@ footer {
 /* Carousselle */
 
 
-img.sliderimg {
+.owl-carousel .imgslider {
   border-radius: 0%;
-  max-width: 100%;
-  max-height: 100%;
-  height: 300px;
 }
 
 
