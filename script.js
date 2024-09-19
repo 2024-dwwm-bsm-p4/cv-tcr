@@ -1,3 +1,9 @@
+// Fonction pour exécuter le script si la taille d'écran dépasse 1200px
+function runScriptIfScreenWidthGreaterThan1290() {
+  if (window.matchMedia("(min-width: 1290px)").matches) {
+
+    console.log("screen > 1290")
+    
 // Création d'un moteur de physique
 const Engine = Matter.Engine;
 const Render = Matter.Render;
@@ -131,6 +137,18 @@ setInterval(function() {
   applyRandomForce(imageBody3);
   applyRandomForce(imageBody4);
 }, 4000);
+
+    
+
+
+  }
+}
+
+// Appel initial au chargement de la page
+runScriptIfScreenWidthGreaterThan1290();
+
+// Écouteur d'événement pour détecter les changements de taille de fenêtre
+window.addEventListener('resize', runScriptIfScreenWidthGreaterThan1290);
 
 
 

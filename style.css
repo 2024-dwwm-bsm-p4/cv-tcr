@@ -49,44 +49,6 @@ img {
   display: flex;
 }
 
-/* Tableau */
-
-table {
-  border-collapse: collapse;
-  margin: auto; 
-}
-
-td,
-th {
-  border: 2px solid black;
-  /* padding: 10px; */
-}
-
-.checked {
-  color: orange;
-}
-
-span.fa.fa-star.checked {
-  font-size: 30px;
-  margin: 2px;
-  text-align: center;
-}
-span.fa.fa-star{
-  font-size: 30px;
-
-}
-
-#world {
-  border: none;
-  width: 1230px;
-  height: 600px;
-}
-
-.photoatout {
-  display: none;
-}
-
-
 /* Bouton GitHub et Linkedin */
 
 .button {
@@ -139,6 +101,47 @@ footer {
 .boutons-footer {
   display: flex;
   gap: 20px;
+}
+
+/* Tableau */
+
+table {
+  border-collapse: collapse;
+  margin: auto; 
+}
+
+td,
+th {
+  border: 2px solid black;
+  /* padding: 10px; */
+}
+
+.checked {
+  color: orange;
+}
+
+span.fa.fa-star.checked {
+  font-size: 10px;
+  margin: 2px;
+  text-align: center;
+}
+span.fa.fa-star{
+  font-size: 10px;
+
+}
+
+.photoatout {
+  width: 50%;
+  height: auto; 
+  
+  
+}
+
+#world{
+  display: grid;
+  place-items: center;
+
+
 }
 
 /*Pop UP*/
@@ -229,7 +232,7 @@ footer {
 
 /*Desktop*/
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1290px) {
   /*fond gradient*/
 
   body {
@@ -398,4 +401,45 @@ footer {
     cursor: pointer;
     stroke: white;
   }
+  
+/* Tableau */
+
+table {
+  border-collapse: collapse;
+  margin: auto; 
+}
+
+td,
+th {
+  border: 2px solid black;
+  /* padding: 10px; */
+}
+
+.checked {
+  color: orange;
+}
+
+span.fa.fa-star.checked {
+  font-size: 30px;
+  margin: 2px;
+  text-align: center;
+}
+span.fa.fa-star{
+  font-size: 30px;
+
+}
+
+#world {
+  border: none;
+  width: 1230px;
+  height: 600px;
+}
+
+.photoatout {
+  display: none;
+}
+
+
+
+
 }
