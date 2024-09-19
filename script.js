@@ -6,6 +6,8 @@ const Bodies = Matter.Bodies;
 const World = Matter.World;
 const Body = Matter.Body;
 const Events = Matter.Events;
+const Mouse = Matter.Mouse;
+const MouseConstraint = Matter.MouseConstraint;
 
 // Création du moteur et du rendu
 const engine = Engine.create();
@@ -16,7 +18,7 @@ const render = Render.create({
   options: {
     width: 1230,
     height: 600,
-    wireframes: false, // Désactiver les cadres filaires pour voir les vraies images
+    wireframes: false,
     background: '#00000000'
   }
 });
@@ -26,110 +28,109 @@ const runner = Runner.create();
 Runner.run(runner, engine);
 
 // Création des limites du cadre
-const ground = Bodies.rectangle(200, 600, 2500, 7, { isStatic: true, render:{
-fillStyle: 'rgba(0, 0, 0, 0)'
-}});
-const leftWall = Bodies.rectangle(0, 300, 10, 600, { isStatic: true, render:{
-    fillStyle: 'rgba(0, 0, 0, 0)'
-    }});
-const rightWall = Bodies.rectangle(1225, 300, 5, 600, { isStatic: true, render:{
-    fillStyle: 'rgba(0, 0, 0, 0)'
-    }});
+const ceiling = Bodies.rectangle(200, 5, 2500, 7, { isStatic: true, render: { fillStyle: 'rgba(0, 0, 0, 0)' } });
+const ground = Bodies.rectangle(200, 600, 2500, 7, { isStatic: true, render: { fillStyle: 'rgba(0, 0, 0, 0)' } });
+const leftWall = Bodies.rectangle(0, 300, 10, 600, { isStatic: true, render: { fillStyle: 'rgba(0, 0, 0, 0)' } });
+const rightWall = Bodies.rectangle(1225, 300, 5, 600, { isStatic: true, render: { fillStyle: 'rgba(0, 0, 0, 0)' } });
 
-World.add(world, [ground, leftWall, rightWall]);
+World.add(world, [ceiling,ground, leftWall, rightWall]);
 
-var img = document.getElementById('minutieux');
-const imageBody = Bodies.circle(200, 150, 70, {
-  restitution: 1,
-  render: {
-    sprite: {
-      texture: img.src,
-      xScale: 0.5,
-      yScale: 0.5
+// Création des objets avec images
+function createImageBody(imgId, x, y, radius) {
+  const img = document.getElementById(imgId);
+  return Bodies.circle(x, y, radius, {
+    restitution: 1,
+    render: {
+      sprite: {
+        texture: img.src,
+        xScale: 0.5,
+        yScale: 0.5
+      }
     }
-  }
-});
-World.add(world, imageBody);
+  });
+}
 
-var img = document.getElementById('patient');
-const imageBody2 = Bodies.circle(200, 150, 70, {
-  restitution: 1,
-  render: {
-    sprite: {
-      texture: img.src,
-      xScale: 0.5,
-      yScale: 0.5
+const imageBody1 = createImageBody('minutieux', 200, 150, 70);
+const imageBody2 = createImageBody('patient', 200, 150, 70);
+const imageBody3 = createImageBody('fiable', 200, 150, 70);
+const imageBody4 = createImageBody('auto', 200, 150, 70);
+
+World.add(world, [imageBody1, imageBody2, imageBody3, imageBody4]);
+
+// Fonction pour générer une couleur aléatoire, pas trop sombre
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 156) + 100; // Valeur entre 100 et 255
+  const g = Math.floor(Math.random() * 156) + 100;
+  const b = Math.floor(Math.random() * 156) + 100;
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+// Fonction pour créer une balle avec une couleur aléatoire
+function createColoredBall(x, y, radius) {
+  return Bodies.circle(x, y, radius, {
+    restitution: 1,
+    render: {
+      fillStyle: getRandomColor()
     }
-  }
-});
+  });
+}
+
+// Ajouter des balles avec des couleurs aléatoires
+const balls = [];
+for (let i = 0; i < 20; i++) {
+  const x = Math.random() * 1000 + 100; // Position X aléatoire
+  const y = Math.random() * 400 + 100; // Position Y aléatoire
+  const radius = Math.random() * 30 + 25; // Taille aléatoire (entre 20 et 50)
+  const ball = createColoredBall(x, y, radius);
+  balls.push(ball);
+}
+
+World.add(world, balls);
 
 
-World.add(world,imageBody2);
+// Ajouter une légère gravité pour faire tomber les objets
+engine.world.gravity.y = 0.01;
 
-var img = document.getElementById('fiable');
-const imageBody3 = Bodies.circle(200, 150, 70, {
-  restitution: 1,
-  render: {
-    sprite: {
-      texture: img.src,
-      xScale: 0.5,
-      yScale: 0.5
+// --- Utilisation de la souris pour saisir les balles ---
+const canvasMouse = Mouse.create(render.canvas);
+const mouseConstraint = MouseConstraint.create(engine, {
+  mouse: canvasMouse,
+  constraint: {
+    stiffness: 0.2,
+    render: {
+      visible: false
     }
+  },
+  // Restreindre la saisie aux objets spécifiques (les balles)
+  collisionFilter: {
+    mask: imageBody1.collisionFilter.category | 
+          imageBody2.collisionFilter.category | 
+          imageBody3.collisionFilter.category | 
+          imageBody4.collisionFilter.category
   }
 });
 
-
-World.add(world,imageBody3);
-
-
-var img = document.getElementById('auto');
-const imageBody4 = Bodies.circle(200, 150, 70, {
-  restitution: 1,
-  render: {
-    sprite: {
-      texture: img.src,
-      xScale: 0.5,
-      yScale: 0.5
-    }
-  }
-});
-
-
-World.add(world,imageBody4);
-
-
-// Ajouter une légère gravité pour faire tomber l'image
-engine.world.gravity.y = 0.1;
-
-// --- Ajouter la souris physique ---
-let mouseBody = Bodies.circle(20, 20, 70, {
-  isStatic: false,
-  render: {
-    fillStyle: 'transparent'
-  }
-});
-
-// Ajoute la souris au monde
-World.add(world, mouseBody);
-
-// Événement pour suivre la position de la souris
-render.canvas.addEventListener('mousemove', function(event) {
-  const mouseX = event.clientX - render.canvas.getBoundingClientRect().left;
-  const mouseY = event.clientY - render.canvas.getBoundingClientRect().top;
-  
-  // Met à jour la position du corps de la souris
-  Body.setPosition(mouseBody, { x: mouseX, y: mouseY });
-});
-
-// Permet de cliquer et déplacer la balle
-render.canvas.addEventListener('mousedown', function(event) {
-  // Ici tu peux ajouter des interactions pour cliquer sur les objets
-});
+// Ajouter la contrainte de la souris au monde
+World.add(world, mouseConstraint);
 
 // Mettre à jour la position de la souris physique à chaque tick
 Events.on(engine, 'beforeUpdate', function() {
-  // Ici, tu pourrais ajouter des forces ou interactions pour rendre la souris plus complexe
+  // Ici, tu pourrais ajouter d'autres interactions complexes
 });
+
+// --- Application de forces aléatoires toutes les 8 secondes ---
+function applyRandomForce(body) {
+  const forceMagnitude = 0.15 * body.mass;
+  const force = Matter.Vector.create((Math.random() - 0.5) * forceMagnitude, (Math.random() - 0.5) * forceMagnitude);
+  Body.applyForce(body, body.position, force);
+}
+
+setInterval(function() {
+  applyRandomForce(imageBody1);
+  applyRandomForce(imageBody2);
+  applyRandomForce(imageBody3);
+  applyRandomForce(imageBody4);
+}, 4000);
 
 
 
