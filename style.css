@@ -19,7 +19,7 @@ p.line {
   text-align: center;
 }
 
-.Info-entete {
+.header-info {
   margin: 70px;
 }
 
@@ -107,7 +107,7 @@ footer {
 
 table {
   border-collapse: collapse;
-  margin: auto; 
+  margin: auto;
 }
 
 td,
@@ -125,23 +125,18 @@ span.fa.fa-star.checked {
   margin: 2px;
   text-align: center;
 }
-span.fa.fa-star{
+span.fa.fa-star {
   font-size: 10px;
-
 }
 
-.photoatout {
+.strengths-photo {
   width: 50%;
-  height: auto; 
-  
-  
+  height: auto;
 }
 
-#world{
+#world {
   display: grid;
   place-items: center;
-
-
 }
 
 /*Pop UP*/
@@ -200,7 +195,7 @@ span.fa.fa-star{
 
 /*Mode nuit*/
 
-.mnuit {
+.nightmode {
   transition-property: background, p, h5, h2, td, th;
   transition-duration: 4s;
 
@@ -401,44 +396,39 @@ span.fa.fa-star{
     cursor: pointer;
     stroke: white;
   }
-  
-/* Tableau */
 
-table {
-  border-collapse: collapse;
-  margin: auto; 
-}
+  /* Tableau */
 
-td,
-th {
-  border: 2px solid black;
-}
+  table {
+    border-collapse: collapse;
+    margin: auto;
+  }
 
-.checked {
-  color: orange;
-}
+  td,
+  th {
+    border: 2px solid black;
+  }
 
-span.fa.fa-star.checked {
-  font-size: 30px;
-  margin: 2px;
-  text-align: center;
-}
-span.fa.fa-star{
-  font-size: 30px;
+  .checked {
+    color: orange;
+  }
 
-}
+  span.fa.fa-star.checked {
+    font-size: 30px;
+    margin: 2px;
+    text-align: center;
+  }
+  span.fa.fa-star {
+    font-size: 30px;
+  }
 
-#world {
-  border: none;
-  width: 1230px;
-  height: 600px;
-}
+  #world {
+    border: none;
+    width: 1230px;
+    height: 600px;
+  }
 
-.photoatout {
-  display: none;
-}
-
-
-
-
+  .strengths-photo {
+    display: none;
+  }
 }

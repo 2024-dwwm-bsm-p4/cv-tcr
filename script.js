@@ -140,11 +140,11 @@ function runScriptIfScreenWidthGreaterThan1290() {
 runScriptIfScreenWidthGreaterThan1290();
 window.addEventListener("resize", runScriptIfScreenWidthGreaterThan1290);
 
-function opop() {
+function togglePopup() {
   const myPopup = new Popup({
     id: "popup",
     title: "Options",
-    content: `<input type="button" onclick="mode_nuit()" class="buttoncs" value="Mode sombre" />`,
+    content: `<input type="button" onclick="toggleNightMode()" class="buttoncs" value="Mode sombre" />`,
     font: "Poppins, sans-serif",
     css: `@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');`,
     disableScroll: false,
@@ -154,9 +154,9 @@ function opop() {
   myPopup.show();
 }
 
-function mode_nuit() {
-  document.getElementById("bodyhtml");
-  bodyhtml.classList.toggle("mnuit");
+function toggleNightMode() {
+  document.getElementById("htmlBody");
+  htmlBody.classList.toggle("nightmode");
 }
 
 $(".owl-carousel").owlCarousel({
